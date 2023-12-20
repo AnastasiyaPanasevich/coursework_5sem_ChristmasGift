@@ -11,12 +11,12 @@
             <ImageBrush ImageSource="/Controller/background1.jpg"/>
         </Grid.Background>
 
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
 
         <StackPanel Orientation="Horizontal" Margin="243,113,147,57" Height="NaN" Width="NaN">
 
@@ -66,6 +66,8 @@
             <!-- Right StackPanel for Cookies and Ornaments -->
         </StackPanel>
 
+        <Label x:Name="lblBudget" Content="Enter the budget:" Foreground="White" FontWeight="Bold" Margin="45,202,646,201" Height="NaN" Width="NaN"/>
+        <TextBox x:Name="BudgetTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="74,238,0,0" Height="23"/>
 
 
 
