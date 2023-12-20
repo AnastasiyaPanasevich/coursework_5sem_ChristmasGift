@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasGiftClient", "Chri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasGiftServer", "ChristmasGiftServer\ChristmasGiftServer.csproj", "{E54B2173-8307-42DE-AAF2-595C07D4C98B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftLib", "GiftLib\GiftLib.csproj", "{45374C62-1C7C-493F-990A-925BDF7BCCD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E54B2173-8307-42DE-AAF2-595C07D4C98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E54B2173-8307-42DE-AAF2-595C07D4C98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E54B2173-8307-42DE-AAF2-595C07D4C98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45374C62-1C7C-493F-990A-925BDF7BCCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45374C62-1C7C-493F-990A-925BDF7BCCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45374C62-1C7C-493F-990A-925BDF7BCCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45374C62-1C7C-493F-990A-925BDF7BCCD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
