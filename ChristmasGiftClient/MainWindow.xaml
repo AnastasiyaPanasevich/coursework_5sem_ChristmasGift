@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/background1.jpg"/>
+        </Grid.Background>
+
+        <Button  x:Name="btnStart"     HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,167,0,0" Click="btnStart_Click" Height="191" Width="209">
+            <Button.Background>
+                <ImageBrush ImageSource="/starBtn.png"/>
+            </Button.Background>
+        </Button>
+
 
     </Grid>
 </Window>

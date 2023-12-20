@@ -8,7 +8,7 @@
         Title="RandomWindow" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Controller/background1.jpg"/>
+            <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
 
         <Label x:Name="lblAmount"  Content="Enter the amount:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="270,190,383,216" Width="NaN" />

@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="background1.jpg" />
     <None Remove="Controller\background1.jpg" />
     <None Remove="Controller\images\background1.jpg" />
+    <None Remove="starBtn.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="background1.jpg" />
     <Resource Include="Controller\images\background1.jpg" />
+    <Resource Include="starBtn.png" />
   </ItemGroup>
 
 </Project>

@@ -23,5 +23,13 @@ namespace ChristmasGiftClient.Controller
         {
             InitializeComponent();
         }
+
+        private void btnSubmitCustomOrder_Click(object sender, RoutedEventArgs e)
+        {
+            ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
+            serverRespondWindow.Show();
+
+            this.Close();
+        }
     }
 }

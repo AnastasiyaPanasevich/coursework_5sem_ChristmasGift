@@ -26,7 +26,10 @@ namespace ChristmasGiftClient.Controller
 
         private void btnSubmitRandomOrder_Click(object sender, RoutedEventArgs e)
         {
+            ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
+            serverRespondWindow.Show();
 
+            this.Close();
         }
     }
 }

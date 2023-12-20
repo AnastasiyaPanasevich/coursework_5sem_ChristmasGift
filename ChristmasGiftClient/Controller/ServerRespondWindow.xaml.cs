@@ -15,26 +15,22 @@ using System.Windows.Shapes;
 namespace ChristmasGiftClient.Controller
 {
     /// <summary>
-    /// Interaction logic for SettingsWindow.xaml
+    /// Interaction logic for ServerRespondWindow.xaml
     /// </summary>
-    public partial class SettingsWindow : Window
+    public partial class ServerRespondWindow : Window
     {
-        public SettingsWindow()
+        public ServerRespondWindow()
         {
             InitializeComponent();
         }
 
-        private void btnRUS_Click(object sender, RoutedEventArgs e)
+        private void btnExit_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
 
         }
 
-        private void btnENG_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDone_Click(object sender, RoutedEventArgs e)
+        private void btnRetry_Click(object sender, RoutedEventArgs e)
         {
 
         }

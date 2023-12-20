@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChristmasGiftClient.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace ChristmasGiftClient
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.Show();
+
+            this.Close();
         }
     }
 }

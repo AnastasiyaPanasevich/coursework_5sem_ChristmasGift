@@ -26,11 +26,19 @@ namespace ChristmasGiftClient.Controller
 
         private void btnCreateCustom_Click(object sender, RoutedEventArgs e)
         {
+            CreateOrderWindow createOrderWindow = new CreateOrderWindow();
+            createOrderWindow.Show();
+
+            this.Close();
 
         }
 
         private void btnCreateRandom_Click(object sender, RoutedEventArgs e)
         {
+            RandomWindow randomWindow = new RandomWindow();
+            randomWindow.Show();
+
+            this.Close();
 
         }
     }

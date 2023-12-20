@@ -8,7 +8,9 @@
         Title="SettingsWindow" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/Controller/background1.jpg"/>
+            <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
+
+
         </Grid.Background>
 
         <Label x:Name="lblEnterEmail" Content="Enter your e-mail"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="74,217,613,189" Width="NaN" />
@@ -21,7 +23,7 @@
         
         <Label x:Name="lblChooseLang"  Content="Choose the language:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="569,217,84,189" Width="NaN" />
 
-        <Button  x:Name="btnRUS"   Content="РУС"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,249,0,0" Click="btnRUS_Click"/>
+        <Button  x:Name="btnRUS"   Content="РУС"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="570,250,0,0" Click="btnRUS_Click"/>
         <Button  x:Name="btnENG"   Content="ENG"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,250,0,0" Click="btnENG_Click"/>
 
     </Grid>
