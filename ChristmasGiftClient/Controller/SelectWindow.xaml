@@ -10,8 +10,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
-        <Button x:Name="btnSubmitEmail" Content="DynamicResource btnSubmitEmail" HorizontalAlignment="Center"  Background="DarkGreen" Foreground="White" BorderBrush="{x:Null}" Click="btnSubmitEmail_Click" Height="NaN" Margin="0,258,0,141"/>
-        <TextBox x:Name="textBoxEmail" Height="NaN" Margin="256,195,256,195" Width="287" FontSize="16" />
-        
+
+        <Label x:Name="lblChooseRandomOrCustom"  Content="Choose how to create the gift: random or custom?"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="234,193,234,213" Width="NaN" />
+
+        <Button  x:Name="btnCreateCustom"   Content="Custom"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,261,0,0" Click="btnCreateCustom_Click"/>
+        <Button  x:Name="btnCreateRandom"   Content="Random"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,261,0,0" Click="btnCreateRandom_Click"/>
+
+
+
     </Grid>
 </Window>

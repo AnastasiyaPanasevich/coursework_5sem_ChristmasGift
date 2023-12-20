@@ -7,6 +7,78 @@
         mc:Ignorable="d"
         Title="CreateOrderWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Controller/background1.jpg"/>
+        </Grid.Background>
+
         
+        
+        
+        
+        
+        
+
+        <StackPanel Orientation="Horizontal" Margin="243,113,147,57" Height="NaN" Width="NaN">
+
+            <StackPanel Height="220">
+                <!-- Clothes -->
+                <CheckBox Content="Clothes" x:Name="ClothesCheckBox" Margin="0,0,0,5" Foreground="White" FontWeight="Bold"/>
+                <StackPanel Margin="20,0,0,0">
+                    <CheckBox Content="Wool" x:Name="WoolCheckBox" Foreground="White" FontWeight="Bold"/>
+                    <CheckBox Content="Acrylic" x:Name="AcrylicCheckBox" Foreground="White" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- Input for Clothes -->
+                <Label x:Name="lblClothesAmount" Content="Enter the amount of clothes:" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                <TextBox x:Name="AmountClothesTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="20,0,0,0" Height="23"/>
+
+                <!-- Candles -->
+                <CheckBox Content="Candles" x:Name="CandlesCheckBox" Margin="0,10,0,5" Foreground="White" FontWeight="Bold"/>
+                <StackPanel Margin="20,0,0,0">
+                    <CheckBox Content="Vax" x:Name="VaxCheckBox" Foreground="White" FontWeight="Bold"/>
+                    <CheckBox Content="Parafine" x:Name="ParafineCheckBox" Foreground="White" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- Input for Candles -->
+                <Label x:Name="lblCandlesAmount" Content="Enter the amount of candles:" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                <TextBox x:Name="AmountCandlesTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="20,0,0,0" Height="23"/>
+            </StackPanel>
+            <StackPanel Height="220">
+                <!-- Cookies -->
+                <CheckBox Content="Cookies" x:Name="CookiesCheckBox" Margin="0,0,0,5" Foreground="White" FontWeight="Bold"/>
+                <StackPanel Margin="20,0,0,0">
+                    <CheckBox Content="Gingerbread" x:Name="GingerbreadCheckBox" Foreground="White" FontWeight="Bold"/>
+                    <CheckBox Content="Chocolate" x:Name="ChocolateCheckBox" Foreground="White" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- Input for Cookies -->
+                <Label x:Name="lblCookiesAmount" Content="Enter the amount of cookies:" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                <TextBox x:Name="AmountCookiesTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="20,0,0,0" Height="23"/>
+
+                <!-- Ornaments -->
+                <CheckBox Content="Ornaments" x:Name="OrnamentsCheckBox" Margin="0,10,0,5" Foreground="White" FontWeight="Bold"/>
+                <StackPanel Margin="20,0,0,0">
+                    <CheckBox Content="Glass" x:Name="GlassCheckBox" Foreground="White" FontWeight="Bold"/>
+                    <CheckBox Content="Plastic" x:Name="PlasticCheckBox" Foreground="White" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- Input for Ornaments -->
+                <Label x:Name="lblOrnamentsAmount" Content="Enter the amount of ornaments:" Foreground="White" FontWeight="Bold" Margin="20,0,0,0"/>
+                <TextBox x:Name="AmountOrnamentsTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="20,0,0,0" Height="23"/>
+            </StackPanel>
+
+            <!-- Right StackPanel for Cookies and Ornaments -->
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+        <Button  x:Name="btnSubmitCustomOrder"   Content="Submit"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,377,0,0" Click="btnSubmitRandomOrder_Click"/>
+
+
+
     </Grid>
 </Window>

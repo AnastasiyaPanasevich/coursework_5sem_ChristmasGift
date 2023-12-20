@@ -23,5 +23,10 @@ namespace ChristmasGiftClient.Controller
         {
             InitializeComponent();
         }
+
+        private void btnSubmitRandomOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
