@@ -17,6 +17,9 @@
             </Button.Background>
         </Button>
 
+        <!--DELETE-->
+        <Button  x:Name="btnConnect"   Content="Connect"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65,217,0,0" Click="btnConnect_Click"/>
+
 
     </Grid>
 </Window>

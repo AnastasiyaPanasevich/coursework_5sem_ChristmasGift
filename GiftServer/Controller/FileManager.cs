@@ -5,6 +5,13 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
+//namespace GiftServer.Controller
+//{
+//    internal class FileManager
+//    {
+//    }
+//}
+////////////старый код 
 //namespace ChristmasGiftClient.Model
 //{
 //    public static class GiftCreator

@@ -1,4 +1,5 @@
 ﻿using ChristmasGiftClient.Controller;
+using ChristmasGiftClient.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace ChristmasGiftClient
             settingsWindow.Show();
 
             this.Close();
+        }
+
+        private void btnConnect_Click(object sender, RoutedEventArgs e)
+        {
+            Client client = new Client();
+
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace ChristmasGiftServer
+namespace GiftServer
 {
     public static class Server
     {
