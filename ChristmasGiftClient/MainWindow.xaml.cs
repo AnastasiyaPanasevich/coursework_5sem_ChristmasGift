@@ -35,10 +35,16 @@ namespace ChristmasGiftClient
             this.Close();
         }
 
+        private static void StartClient()
+        {
+            string message = "example";
+            ChristmasGiftClient.Model.Client.RunClientAsync(message).Wait(); // Ждем завершения выполнения клиента
+        }
+
         private void btnConnect_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
-
+            // Запускаем клиента в отдельном потоке
+            Task.Run(() => StartClient());
         }
     }
 }
