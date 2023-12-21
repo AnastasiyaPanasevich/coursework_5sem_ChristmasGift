@@ -4,23 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text;
-using System.Text.Json.Serialization;
+//using System.Text.Json.Serialization;
 using System.Globalization;
 
 namespace GiftLib
 {
-    //[JsonDerivedType(typeof(Gift))]
-    //[JsonDerivedType(typeof(Candles))]
-    //[JsonDerivedType(typeof(Clothes))]
-    //[JsonDerivedType(typeof(Cookie))]
-
     [Serializable]
-    public abstract class Gift
+    public class Gift
     {
         public int Id { get { return _id; } }
+
         public string Name { get { return _name; } }
         public double Price { get { return _price; }}
         public double Weight { get { return _weight; } }
+
 
         private int _id;
         private string _name;

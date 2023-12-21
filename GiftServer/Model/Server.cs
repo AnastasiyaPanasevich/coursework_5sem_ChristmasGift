@@ -2,11 +2,12 @@
 using GiftLib;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Text.Json;
+using System.Xml.Serialization;
 using System.Threading;
 
 namespace ServerNamespace
@@ -62,7 +63,6 @@ namespace ServerNamespace
             Console.ReadLine();
         }
 
-        // Server HandleClient method
         static void HandleClient(object? clientObj)
         {
             TcpClient tcpClient = (TcpClient)clientObj!;
@@ -71,15 +71,30 @@ namespace ServerNamespace
             {
                 NetworkStream stream = tcpClient.GetStream();
 
-                // Assuming you have a Gift object to send
-                GiftLib.Cookie giftToSend = new GiftLib.Cookie(123, "Chocolate", 2.5, 0.1, Dough.Chocolate);
+                // Read the incoming data from the client
+                byte[] buffer = new byte[1024];
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                byte[] receivedData = new byte[bytesRead];
+                Array.Copy(buffer, receivedData, bytesRead);
 
-                // Serialize the Gift object to JSON
-                string jsonData = JsonSerializer.Serialize(giftToSend);
+                // Deserialize the byte array to a List<int>
+                List<int> receivedIndexes = DeserializeXml<List<int>>(receivedData);
 
-                // Convert the JSON string to bytes and send to the client
-                byte[] buffer = Encoding.UTF8.GetBytes(jsonData);
-                stream.Write(buffer, 0, buffer.Length);
+                // Do something with the received indexes...
+                Console.WriteLine($"Received Indexes: {string.Join(", ", receivedIndexes)}");
+
+                // Write the received index to a file
+                bool writeSuccess = WriteIndexToFile(receivedIndexes[0]);
+
+                // Send response to the client
+                if (writeSuccess)
+                {
+                    SendResponse(stream, "Success"); // Success
+                }
+                else
+                {
+                    SendResponse(stream, "Failure"); // Failure
+                }
 
                 tcpClient.Close();
                 Console.WriteLine("Sent response to client");
@@ -89,6 +104,59 @@ namespace ServerNamespace
             {
                 Console.WriteLine($"Error within client: {ex.Message}");
                 log.Info($"Error within client: {ex.Message}");
+            }
+        }
+
+        // Helper method to write an index to a file
+        private static bool WriteIndexToFile(int index)
+        {
+            try
+            {
+                // Use the index as the file name
+                string filePath = $"{index}.txt";
+
+                // Write the index to the file
+                File.WriteAllText(filePath, index.ToString());
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error writing index to file: {ex.Message}");
+                return false;
+            }
+        }
+
+        // Helper method to send a response to the client
+        private static void SendResponse(NetworkStream stream, string response)
+        {
+            // Serialize the response string to a byte array
+            byte[] responseData = Encoding.UTF8.GetBytes(response);
+
+            // Send the serialized response to the client
+            stream.Write(responseData, 0, responseData.Length);
+        }
+
+
+
+        // Helper method to serialize an object to byte array using XML serialization
+        private static byte[] Serialize<T>(T obj)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                serializer.Serialize(ms, obj);
+                return ms.ToArray();
+            }
+        }
+
+        // Helper method to deserialize byte array to an object
+        private static T DeserializeXml<T>(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                return (T)serializer.Deserialize(ms);
             }
         }
     }
