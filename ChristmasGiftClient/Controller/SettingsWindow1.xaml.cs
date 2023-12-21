@@ -25,15 +25,15 @@ namespace ChristmasGiftClient.Controller
             InitializeComponent();
         }
 
-        private void btnRUS_Click(object sender, RoutedEventArgs e)
-        {
+        //private void btnRUS_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void btnENG_Click(object sender, RoutedEventArgs e)
-        {
+        //private void btnENG_Click(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
         {

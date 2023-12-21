@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GiftLib
 {
+    [Serializable]
     public class Cookie : Gift
     {
         public Dough Dough { get; set; }
