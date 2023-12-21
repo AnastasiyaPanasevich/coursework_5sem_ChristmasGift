@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristmasGiftClient", "ChristmasGiftClient\ChristmasGiftClient.csproj", "{39EF011C-E71F-4BFB-846C-19ED13E6C331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChristmasGiftClient", "ChristmasGiftClient\ChristmasGiftClient.csproj", "{39EF011C-E71F-4BFB-846C-19ED13E6C331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftLib", "GiftLib\GiftLib.csproj", "{45374C62-1C7C-493F-990A-925BDF7BCCD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftLib", "GiftLib\GiftLib.csproj", "{45374C62-1C7C-493F-990A-925BDF7BCCD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftServer", "GiftServer\GiftServer.csproj", "{D38B4753-03F0-41B8-B906-2572E8C6BC5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftServer", "GiftServer\GiftServer.csproj", "{D38B4753-03F0-41B8-B906-2572E8C6BC5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xMasGiftTest", "xMasGiftTest\xMasGiftTest.csproj", "{775A5BD6-D16B-4001-BAAE-59BF41CCACB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D38B4753-03F0-41B8-B906-2572E8C6BC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D38B4753-03F0-41B8-B906-2572E8C6BC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D38B4753-03F0-41B8-B906-2572E8C6BC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775A5BD6-D16B-4001-BAAE-59BF41CCACB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775A5BD6-D16B-4001-BAAE-59BF41CCACB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775A5BD6-D16B-4001-BAAE-59BF41CCACB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775A5BD6-D16B-4001-BAAE-59BF41CCACB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

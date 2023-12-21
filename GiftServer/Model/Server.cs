@@ -1,5 +1,6 @@
 ﻿using Dictionary_Server;
 using GiftLib;
+using NLog;
 using System;
 using System.IO;
 using System.Net;
@@ -14,6 +15,7 @@ namespace ServerNamespace
     {
         private static IPAddress serverIP = IPAddress.Parse("127.0.0.1");
         private static int serverPort = 8888;
+        private static Logger log = LogManager.GetCurrentClassLogger();
 
         public static int ServerPort
         {
@@ -33,7 +35,9 @@ namespace ServerNamespace
             try
             {
                 server.Start();
-                Console.WriteLine("Server is online");
+                string mess = "Server is online";
+                Console.WriteLine(mess);
+                log.Info(mess);
 
                 List<string[]> giftsData = DataBaseReader.ReadEverything();
                 while (true)
@@ -41,11 +45,14 @@ namespace ServerNamespace
                     TcpClient client = server.AcceptTcpClient();
                     Thread clientThread = new Thread(HandleClient);
                     clientThread.Start(client);
+                    mess = $"Connected with client {client}";
+                    log.Info(mess);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Something went wrong: {ex}");
+                log.Info($"Something went wrong: {ex}");
             }
             finally
             {
@@ -81,6 +88,7 @@ namespace ServerNamespace
             catch (Exception ex)
             {
                 Console.WriteLine($"Error within client: {ex.Message}");
+                log.Info($"Error within client: {ex.Message}");
             }
         }
     }
