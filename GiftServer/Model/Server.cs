@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dictionary_Server;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -31,6 +32,7 @@ namespace GiftServer
                 server.Start();
                 Console.WriteLine("Server is online");
 
+                DataBaseReader.ReadEverything();
                 while (true)
                 {
                     TcpClient client = server.AcceptTcpClient();

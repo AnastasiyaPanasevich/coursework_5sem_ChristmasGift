@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace GiftLib
 {
+    [JsonDerivedType(typeof(Gift))]
+    [JsonDerivedType(typeof(Candles))]
+    [JsonDerivedType(typeof(Clothes))]
+    [JsonDerivedType(typeof(Cookie))]
+
     public abstract class Gift
     {
         public string Id { get; set; }
