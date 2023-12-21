@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GiftLib;
+using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +55,33 @@ namespace ChristmasGiftClient.Model
             byte[] responseData = new byte[1024];
             int bytesRead = await stream.ReadAsync(responseData, 0, responseData.Length);
             return Encoding.ASCII.GetString(responseData, 0, bytesRead);
+        }
+
+        public static void GetGifts(List<string[]> gifts)
+        {
+
+            foreach (var gift in gifts)
+            {
+                switch (Convert.ToInt32(gift[0]))
+                {
+                    case >= 4000:
+                        States.Ornaments.Add(new Ornaments(gift));
+                        break;
+                    case >= 3000:
+                        States.Cookies.Add(new GiftLib.Cookie(gift));
+                        break;
+                    case >= 2000:
+                        States.Clothes.Add(new Clothes(gift));
+                        break;
+                    case >= 1000:
+                        States.Candles.Add(new Candles(gift));
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
         }
     }
 }

@@ -15,5 +15,9 @@ namespace GiftLib
         {
             _material = material;
         }
+        public Ornaments(string[] data) : base(data)
+        {
+            _material = (OrnamentsMaterial)Convert.ToInt32(data[4]);
+        }
     }
 }
