@@ -57,9 +57,8 @@ namespace ChristmasGiftClient.Model
             return Encoding.ASCII.GetString(responseData, 0, bytesRead);
         }
 
-        public static void GetGifts(List<string[]> gifts)
+        public static async Task GetGifts(List<string[]> gifts)
         {
-
             foreach (var gift in gifts)
             {
                 switch (Convert.ToInt32(gift[0]))

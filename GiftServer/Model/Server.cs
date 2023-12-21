@@ -32,7 +32,7 @@ namespace ServerNamespace
                 server.Start();
                 Console.WriteLine("Server is online");
 
-                DataBaseReader.ReadEverything();
+                List<string[]> giftsData = DataBaseReader.ReadEverything();
                 while (true)
                 {
                     TcpClient client = server.AcceptTcpClient();
