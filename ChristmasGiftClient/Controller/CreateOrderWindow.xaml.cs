@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChristmasGiftClient.Model;
+using GiftLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +24,25 @@ namespace ChristmasGiftClient.Controller
         public CreateOrderWindow()
         {
             InitializeComponent();
+            lbxCandles.ItemsSource = States.Candles;
+            lbxClothes.ItemsSource = States.Clothes;
+            lbxCookies.ItemsSource = States.Cookies;
+            lbxOrnaments.ItemsSource = States.Ornaments;
         }
 
         private void btnSubmitCustomOrder_Click(object sender, RoutedEventArgs e)
         {
+            List<int> selectedIndexes = new List<int>();
+
+            foreach(var listBox in new List<ListBox>{ lbxCandles, lbxClothes, lbxCookies, lbxOrnaments})
+            {
+                foreach(var item in listBox.SelectedItems)
+                {
+                    Gift temp = (Gift)item;
+                    selectedIndexes.Add(temp.Id);
+                }
+            }
+
             ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
             serverRespondWindow.Show();
 

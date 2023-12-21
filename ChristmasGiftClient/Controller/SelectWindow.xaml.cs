@@ -28,6 +28,7 @@ namespace ChristmasGiftClient.Controller
         {
             CreateOrderWindow createOrderWindow = new CreateOrderWindow();
             createOrderWindow.Show();
+            
 
             this.Close();
 

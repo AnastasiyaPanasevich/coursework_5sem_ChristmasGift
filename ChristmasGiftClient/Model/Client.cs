@@ -57,30 +57,6 @@ namespace ChristmasGiftClient.Model
             return Encoding.ASCII.GetString(responseData, 0, bytesRead);
         }
 
-        public static async Task GetGifts(List<string[]> gifts)
-        {
-            foreach (var gift in gifts)
-            {
-                switch (Convert.ToInt32(gift[0]))
-                {
-                    case >= 4000:
-                        States.Ornaments.Add(new Ornaments(gift));
-                        break;
-                    case >= 3000:
-                        States.Cookies.Add(new GiftLib.Cookie(gift));
-                        break;
-                    case >= 2000:
-                        States.Clothes.Add(new Clothes(gift));
-                        break;
-                    case >= 1000:
-                        States.Candles.Add(new Candles(gift));
-                        break;
-                    default:
-                        break;
-                }
-            }
 
-
-        }
     }
 }

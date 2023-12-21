@@ -13,7 +13,8 @@ namespace Dictionary_Server
 {
     public static class DataBaseReader
     {
-        private static string _dataBasePath = @"Data Source=E:\проги\C#\xnasgift\GiftServer\Resource\GiftsDB.db";
+
+        private static string _dataBasePath = @"Data Source=GiftsDB.db";
 
         public static List<string[]> ReadEverything()
         {
