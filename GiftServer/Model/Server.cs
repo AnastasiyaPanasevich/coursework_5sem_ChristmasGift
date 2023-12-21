@@ -1,8 +1,11 @@
 ﻿using Dictionary_Server;
+using GiftLib;
 using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 
 namespace ServerNamespace
@@ -52,26 +55,27 @@ namespace ServerNamespace
             Console.ReadLine();
         }
 
+        // Server HandleClient method
         static void HandleClient(object? clientObj)
         {
-            TcpClient tcpClient = (TcpClient)clientObj!; // Помечаем с атрибутом nullability
+            TcpClient tcpClient = (TcpClient)clientObj!;
 
             try
             {
                 NetworkStream stream = tcpClient.GetStream();
-                byte[] data = new byte[1024];
-                int bytesRead = stream.Read(data, 0, data.Length);
-                string receivedData = Encoding.ASCII.GetString(data, 0, bytesRead);
 
-                Console.WriteLine($"Received data from client: {receivedData}");
+                // Assuming you have a Gift object to send
+                GiftLib.Cookie giftToSend = new GiftLib.Cookie("123", "Chocolate", 2.5, 0.1, Dough.Chocolate);
 
-                string responseMessage = (receivedData == "example") ? "OK" : "Error";
+                // Serialize the Gift object to JSON
+                string jsonData = JsonSerializer.Serialize(giftToSend);
 
-                byte[] responseData = Encoding.ASCII.GetBytes(responseMessage);
-                stream.Write(responseData, 0, responseData.Length);
+                // Convert the JSON string to bytes and send to the client
+                byte[] buffer = Encoding.UTF8.GetBytes(jsonData);
+                stream.Write(buffer, 0, buffer.Length);
 
                 tcpClient.Close();
-                Console.WriteLine($"Sent response to client: {responseMessage}");
+                Console.WriteLine("Sent response to client");
                 Console.WriteLine("The client has disconnected");
             }
             catch (Exception ex)

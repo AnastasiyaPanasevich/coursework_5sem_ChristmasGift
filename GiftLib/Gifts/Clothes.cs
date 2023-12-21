@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GiftLib
 {
+    [Serializable]
     public class Clothes : Gift
     {
         public Fabric Fabric { get; set; }

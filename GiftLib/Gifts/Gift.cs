@@ -9,11 +9,12 @@ using System.Globalization;
 
 namespace GiftLib
 {
-    [JsonDerivedType(typeof(Gift))]
-    [JsonDerivedType(typeof(Candles))]
-    [JsonDerivedType(typeof(Clothes))]
-    [JsonDerivedType(typeof(Cookie))]
+    //[JsonDerivedType(typeof(Gift))]
+    //[JsonDerivedType(typeof(Candles))]
+    //[JsonDerivedType(typeof(Clothes))]
+    //[JsonDerivedType(typeof(Cookie))]
 
+    [Serializable]
     public abstract class Gift
     {
         public int Id { get { return _id; } }

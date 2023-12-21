@@ -38,16 +38,30 @@ namespace ChristmasGiftClient
             this.Close();
         }
 
+
+        // кнопка передает что-то серверу в отдельном потоке
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private static void StartClient()
         {
             string message = "example";
             ChristmasGiftClient.Model.Client.RunClientAsync(message).Wait(); // Ждем завершения выполнения клиента
         }
 
+        
         private void btnConnect_Click(object sender, RoutedEventArgs e)
         {
             // Запускаем клиента в отдельном потоке
             Task.Run(() => StartClient());
+        }
+
+        private void btnRUSLang_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnENGLang_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         public static void GetGifts()
