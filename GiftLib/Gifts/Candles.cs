@@ -11,7 +11,7 @@ namespace GiftLib
         public CandleMaterial Material { get; set; }
         private CandleMaterial _material;
 
-        public Candles(string id, string name, double price, double weight, CandleMaterial material) : base(id, name, price, weight)
+        public Candles(int id, string name, double price, double weight, CandleMaterial material) : base(id, name, price, weight)
         {
             _material = material;
         }
@@ -20,5 +20,9 @@ namespace GiftLib
             _material = (CandleMaterial)Convert.ToInt32(data[4]);
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + $" ({_material})";
+        }
     }
 }

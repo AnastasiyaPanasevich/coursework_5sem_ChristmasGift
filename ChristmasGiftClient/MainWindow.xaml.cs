@@ -1,5 +1,7 @@
 ﻿using ChristmasGiftClient.Controller;
 using ChristmasGiftClient.Model;
+using Dictionary_Server;
+using GiftLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +31,7 @@ namespace ChristmasGiftClient
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+            GetGifts();
             SettingsWindow settingsWindow = new SettingsWindow();
             settingsWindow.Show();
 
@@ -45,6 +48,31 @@ namespace ChristmasGiftClient
         {
             // Запускаем клиента в отдельном потоке
             Task.Run(() => StartClient());
+        }
+
+        public static void GetGifts()
+        {
+            List<string[]> gifts = DataBaseReader.ReadEverything();
+            foreach (var gift in gifts)
+            {
+                switch (Convert.ToInt32(gift[0]))
+                {
+                    case >= 4000:
+                        States.Ornaments.Add(new Ornaments(gift));
+                        break;
+                    case >= 3000:
+                        States.Cookies.Add(new GiftLib.Cookie(gift));
+                        break;
+                    case >= 2000:
+                        States.Clothes.Add(new Clothes(gift));
+                        break;
+                    case >= 1000:
+                        States.Candles.Add(new Candles(gift));
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
