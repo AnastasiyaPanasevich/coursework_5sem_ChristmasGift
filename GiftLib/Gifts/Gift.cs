@@ -18,9 +18,9 @@ namespace GiftLib
     public abstract class Gift
     {
         public int Id { get { return _id; } }
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public double Weight { get { return _weight; } set { Weight = value; } }
+        public string Name { get { return _name; } }
+        public double Price { get { return _price; }}
+        public double Weight { get { return _weight; } }
 
         private int _id;
         private string _name;

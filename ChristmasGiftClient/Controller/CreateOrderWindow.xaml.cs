@@ -2,6 +2,7 @@
 using GiftLib;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace ChristmasGiftClient.Controller
     /// </summary>
     public partial class CreateOrderWindow : Window
     {
+        List<int> selectedIndexes = new List<int>();
+
         public CreateOrderWindow()
         {
             InitializeComponent();
@@ -32,19 +35,6 @@ namespace ChristmasGiftClient.Controller
 
         private async void btnSubmitCustomOrder_Click(object sender, RoutedEventArgs e)
         {
-            List<int> selectedIndexes = new List<int>();
-
-            foreach(var listBox in new List<ListBox>{ lbxCandles, lbxClothes, lbxCookies, lbxOrnaments})
-            {
-                foreach(var item in listBox.SelectedItems)
-                {
-                    Gift temp = (Gift)item;
-                    selectedIndexes.Add(temp.Id);
-                }
-            }
-
-
-
             // Call the client to send the selected indexes
             await Client.RunClientAsync(selectedIndexes);
 
@@ -53,6 +43,22 @@ namespace ChristmasGiftClient.Controller
             serverRespondWindow.Show();
 
             this.Close();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(e.AddedItems.Count > 0)
+            {
+                var a = e.AddedItems[0] as Gift;
+                selectedIndexes.Add(a.Id);
+                txtBudget.Text = (Double.Parse(txtBudget.Text) + a.Price).ToString();
+            }
+            else
+            {
+                var a = e.RemovedItems[0] as Gift;
+                selectedIndexes.Remove(a.Id);
+                txtBudget.Text = (Double.Parse(txtBudget.Text) - a.Price).ToString();
+            }
         }
     }
 }
