@@ -30,7 +30,7 @@ namespace ChristmasGiftClient.Controller
             lbxOrnaments.ItemsSource = States.Ornaments;
         }
 
-        private void btnSubmitCustomOrder_Click(object sender, RoutedEventArgs e)
+        private async void btnSubmitCustomOrder_Click(object sender, RoutedEventArgs e)
         {
             List<int> selectedIndexes = new List<int>();
 
@@ -42,6 +42,12 @@ namespace ChristmasGiftClient.Controller
                     selectedIndexes.Add(temp.Id);
                 }
             }
+
+
+
+            // Call the client to send the selected indexes
+            await Client.RunClientAsync(selectedIndexes);
+
 
             ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
             serverRespondWindow.Show();

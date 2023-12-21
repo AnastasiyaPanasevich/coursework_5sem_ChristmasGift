@@ -65,7 +65,7 @@ namespace ServerNamespace
                 NetworkStream stream = tcpClient.GetStream();
 
                 // Assuming you have a Gift object to send
-                GiftLib.Cookie giftToSend = new GiftLib.Cookie("123", "Chocolate", 2.5, 0.1, Dough.Chocolate);
+                GiftLib.Cookie giftToSend = new GiftLib.Cookie(123, "Chocolate", 2.5, 0.1, Dough.Chocolate);
 
                 // Serialize the Gift object to JSON
                 string jsonData = JsonSerializer.Serialize(giftToSend);
