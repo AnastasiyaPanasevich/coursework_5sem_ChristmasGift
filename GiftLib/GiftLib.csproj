@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="GiftsDB-ru.db">
+    <None Update="GiftsDB-ru-RU.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="GiftsDB-en.db">
+    <None Update="GiftsDB-en-EN.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

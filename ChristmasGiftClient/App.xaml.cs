@@ -31,8 +31,8 @@ namespace ChristmasGiftClient
 
             m_Languages.Clear();
             m_Languages.Add(new CultureInfo("ru-RU"));
-            m_Languages.Add(new CultureInfo("en-US"));
-            //Language = ChristmasGiftClient.Properties.Settings.Default.DefaultLanguage;
+            m_Languages.Add(new CultureInfo("en-EN"));
+            Language = ChristmasGiftClient.Properties.Settings.Default.DefaultLanguage;
         }
 
         public static event EventHandler LanguageChanged;
@@ -59,7 +59,7 @@ namespace ChristmasGiftClient
                         dict.Source = new Uri(String.Format("Resources/ru-RU.xaml", value.Name), UriKind.Relative);
                         break;
                     default:
-                        dict.Source = new Uri("Resources/en_US.xaml", UriKind.Relative);
+                        dict.Source = new Uri("Resources/en-EN.xaml", UriKind.Relative);
                         break;
                 }
 
@@ -80,13 +80,14 @@ namespace ChristmasGiftClient
 
                 //4. Вызываем евент для оповещения всех окон.
                 LanguageChanged(Application.Current, new EventArgs());
+                
             }
         }
 
         private void App_LanguageChanged(Object sender, EventArgs e)
         {
-            //ChristmasGiftClient.Properties.Settings.Default.DefaultLanguage = Language;
-            //ChristmasGiftClient.Properties.Settings.Default.Save();
+            ChristmasGiftClient.Properties.Settings.Default.DefaultLanguage = Language;
+            ChristmasGiftClient.Properties.Settings.Default.Save();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace ServerNamespace
                 Console.WriteLine(mess);
                 log.Info(mess);
 
-                List<string[]> giftsData = DataBaseReader.ReadEverything();
+                List<string[]> giftsData = DataBaseReader.ReadEverything("en-EN");
                 while (true)
                 {
                     TcpClient client = server.AcceptTcpClient();

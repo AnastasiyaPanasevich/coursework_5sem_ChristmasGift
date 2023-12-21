@@ -4,6 +4,7 @@ using Dictionary_Server;
 using GiftLib;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,35 @@ namespace ChristmasGiftClient
         public MainWindow()
         {
             InitializeComponent();
+
+            App.LanguageChanged += LanguageChanged;
+            CultureInfo currLang = App.Language;
+
+            btnRUSLang.Click += ChangeLanguageClick;
+            btnRUSLang.Tag = new CultureInfo("ru-RU");
+            btnENGLang.Click += ChangeLanguageClick;
+            btnENGLang.Tag = new CultureInfo("en-EN");
+        }
+
+
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
+
+            GetGifts();
+        }
+
+        private void ChangeLanguageClick(Object sender, EventArgs e)
+        {
+            Button mi = sender as Button;
+            if (mi != null)
+            {
+                CultureInfo lang = mi.Tag as CultureInfo;
+                if (lang != null)
+                {
+                    App.Language = lang;
+                }
+            }
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
@@ -68,7 +98,15 @@ namespace ChristmasGiftClient
 
         public static void GetGifts()
         {
-            List<string[]> gifts = DataBaseReader.ReadEverything();
+            List<string[]> gifts = DataBaseReader.ReadEverything(App.Language.ToString());
+            if(States.Ornaments.Count > 0)
+            {
+                States.Candles.Clear();
+                States.Clothes.Clear();
+                States.Cookies.Clear();
+                States.Ornaments.Clear();
+            }
+
             foreach (var gift in gifts)
             {
                 switch (Convert.ToInt32(gift[0]))

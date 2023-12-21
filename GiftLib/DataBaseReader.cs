@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using GiftLib;
-using Microsoft.Data.Sqlite;
+﻿using Microsoft.Data.Sqlite;
 
 namespace Dictionary_Server
 {
     public static class DataBaseReader
     {
 
-        private static string _dataBasePath = @"Data Source=GiftsDB-en.db";
-
-        public static List<string[]> ReadEverything()
+        public static List<string[]> ReadEverything(string lang)
         {
+            string _dataBasePath = $"Data Source=GiftsDB-{lang}.db";
             string[] tables = { "Candles", "Clothes", "Cookies", "Ornaments" };
             List<string[]> list = new List<string[]>();
 

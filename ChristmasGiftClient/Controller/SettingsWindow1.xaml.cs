@@ -1,6 +1,7 @@
 ﻿using ChristmasGiftClient.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace ChristmasGiftClient.Controller
         public SettingsWindow()
         {
             InitializeComponent();
+
         }
 
         //private void btnRUS_Click(object sender, RoutedEventArgs e)
