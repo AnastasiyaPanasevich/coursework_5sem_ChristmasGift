@@ -10,11 +10,15 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
+        <Grid HorizontalAlignment="Center" Height="88" Margin="0,193,0,0" VerticalAlignment="Top" Width="332">
 
-        <Label x:Name="lblChooseRandomOrCustom"  Content="{DynamicResource m_lblChooseRandomOrCustom}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="234,193,234,213" Width="NaN" />
+            <Button  x:Name="btnCreateCustom"   Content="{DynamicResource m_btnCreateCustom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="33,68,0,0" Click="btnCreateCustom_Click"/>
+            <Button  x:Name="btnCreateRandom"   Content="{DynamicResource m_btnCreateRandom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,68,0,0" Click="btnCreateRandom_Click"/>
+            <Label x:Name="lblChooseRandomOrCustom"  Content="{DynamicResource m_lblChooseRandomOrCustom}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="0,0,0,60" Width="NaN" />
 
-        <Button  x:Name="btnCreateCustom"   Content="{DynamicResource m_btnCreateCustom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,261,0,0" Click="btnCreateCustom_Click"/>
-        <Button  x:Name="btnCreateRandom"   Content="{DynamicResource m_btnCreateRandom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,261,0,0" Click="btnCreateRandom_Click"/>
+
+
+        </Grid>
 
 
 

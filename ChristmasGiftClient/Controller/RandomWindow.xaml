@@ -10,12 +10,16 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
+        <Grid HorizontalAlignment="Left" Height="112" Margin="272,217,0,0" VerticalAlignment="Top" Width="238">
+            <TextBox x:Name="BudgetTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="165,0,0,0" Height="23"/>
 
-        <Label x:Name="lblBudget"  Content="{DynamicResource m_lblBudget}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="272,217,381,189" Width="NaN" />
-        <TextBox x:Name="BudgetTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="437,217,0,0" Height="23"/>
+
+            <Button  x:Name="btnSubmitRandomOrder"   Content="{DynamicResource m_btnSubmitRandomOrder}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,92,0,0" Click="btnSubmitRandomOrder_Click"/>
+            <Label x:Name="lblBudget"  Content="{DynamicResource m_lblBudget}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="0,0,91,84" Width="NaN" />
 
 
-        <Button  x:Name="btnSubmitRandomOrder"   Content="{DynamicResource m_btnSubmitRandomOrder}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,309,0,0" Click="btnSubmitRandomOrder_Click"/>
+
+        </Grid>
 
 
 
