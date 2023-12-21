@@ -15,5 +15,10 @@ namespace GiftLib
         {
             _fabric = fabric;
         }
+        public Clothes(string[] data) : base(data)
+        {
+            _fabric = (Fabric)Convert.ToInt32(data[4]);
+        }
+
     }
 }

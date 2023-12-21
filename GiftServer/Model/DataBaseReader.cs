@@ -14,10 +14,9 @@ namespace Dictionary_Server
     public static class DataBaseReader
     {
         private static string _dataBasePath = @"Data Source=E:\проги\C#\xnasgift\GiftServer\Resource\GiftsDB.db";
-        public static string ReadEverything()
+
+        public static List<string[]> ReadEverything()
         {
-            //"You need to call .  If you are using a bundle package, this is done by calling SQLitePCL.Batteries.Init()."
-            string data="";
             string[] tables = { "Candles", "Clothes", "Cookies", "Ornaments" };
             List<string[]> list = new List<string[]>();
 
@@ -43,7 +42,7 @@ namespace Dictionary_Server
                 }
             }
             DBconnection.Close();
-            return data;
+            return list;
         }
     }
 }

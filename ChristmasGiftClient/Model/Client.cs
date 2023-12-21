@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GiftLib;
+using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -9,7 +12,7 @@ namespace ChristmasGiftClient.Model
         private static string serverIP = "127.0.0.1";
         private static int serverPort = 8888;
 
-        static void Main()
+        public static void Main()
         {
             TcpClient client = new TcpClient(serverIP, serverPort);
 
@@ -39,6 +42,33 @@ namespace ChristmasGiftClient.Model
             }
 
             Console.ReadLine();
+        }
+
+        public static void GetGifts(List<string[]> gifts)
+        {
+
+            foreach (var gift in gifts)
+            {
+                switch (Convert.ToInt32(gift[0]))
+                {
+                    case >= 4000:
+                        States.Ornaments.Add(new Ornaments(gift));
+                        break;
+                    case >= 3000:
+                        States.Cookies.Add(new GiftLib.Cookie(gift));
+                        break;
+                    case >= 2000:
+                        States.Clothes.Add(new Clothes(gift));
+                        break;
+                    case >= 1000:
+                        States.Candles.Add(new Candles(gift));
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
         }
     }
 }

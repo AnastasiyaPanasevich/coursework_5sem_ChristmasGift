@@ -15,5 +15,10 @@ namespace GiftLib
         {
             _material = material;
         }
+        public Candles(string[] data) : base(data)
+        {
+            _material = (CandleMaterial)Convert.ToInt32(data[4]);
+        }
+
     }
 }

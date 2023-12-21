@@ -33,5 +33,12 @@ namespace GiftLib
             _price = price;
             _weight = weight;
         }
+        public Gift(string[] data)
+        {
+            _id = data[0];
+            _name = data[1];
+            _price = Double.Parse(data[2]);
+            _weight = Double.Parse(data[3]);
+        }
     }
 }

@@ -15,5 +15,10 @@ namespace GiftLib
         {
             _dough = dough;
         }
+        public Cookie(string[] data) : base(data)
+        {
+            _dough = (Dough)Convert.ToInt32(data[4]);
+        }
+
     }
 }
