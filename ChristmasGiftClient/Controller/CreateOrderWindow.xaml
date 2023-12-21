@@ -21,16 +21,16 @@
 
 
 
-        <Button  x:Name="btnSubmitCustomOrder"   Content="Submit"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,381,0,0" Click="btnSubmitCustomOrder_Click" Width="76"/>
-        <Label Content="Candles" HorizontalAlignment="Left" Margin="92,157,0,0" VerticalAlignment="Top"/>
+        <Button  x:Name="btnSubmitCustomOrder"   Content="{DynamicResource m_btnSubmitCustomOrder}"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,381,0,0" Click="btnSubmitCustomOrder_Click" Width="76"/>
+        <Label  x:Name="lblCandles"  Content="{DynamicResource m_lblCandles}" HorizontalAlignment="Left" Margin="92,157,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxCandles" Margin="92,182,576,78" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged">
 
         </ListBox>
-        <Label Content="Clothes" HorizontalAlignment="Left" Margin="246,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblClothes"   Content="{DynamicResource m_lblClothes}" HorizontalAlignment="Left" Margin="246,157,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxClothes" SelectionMode="Multiple" Margin="246,182,422,78" SelectionChanged="ListBox_SelectionChanged"/>
-        <Label Content="Cookies" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lblCookies"  Content="{DynamicResource m_lblCookies}" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxCookies" SelectionMode="Multiple" Margin="400,182,268,78" SelectionChanged="ListBox_SelectionChanged"/>
-        <Label Content="Ornaments" HorizontalAlignment="Left" Margin="552,157,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lblOrnaments"  Content="{DynamicResource m_lblOrnaments}" HorizontalAlignment="Left" Margin="552,157,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbxOrnaments" SelectionMode="Multiple" Margin="552,182,116,78" SelectionChanged="ListBox_SelectionChanged"/>
 
 

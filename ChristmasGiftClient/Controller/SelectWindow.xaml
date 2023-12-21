@@ -11,10 +11,10 @@
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
 
-        <Label x:Name="lblChooseRandomOrCustom"  Content="Choose how to create the gift: random or custom?"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="234,193,234,213" Width="NaN" />
+        <Label x:Name="lblChooseRandomOrCustom"  Content="{DynamicResource m_lblChooseRandomOrCustom}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="234,193,234,213" Width="NaN" />
 
-        <Button  x:Name="btnCreateCustom"   Content="Custom"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,261,0,0" Click="btnCreateCustom_Click"/>
-        <Button  x:Name="btnCreateRandom"   Content="Random"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,261,0,0" Click="btnCreateRandom_Click"/>
+        <Button  x:Name="btnCreateCustom"   Content="{DynamicResource m_btnCreateCustom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="267,261,0,0" Click="btnCreateCustom_Click"/>
+        <Button  x:Name="btnCreateRandom"   Content="{DynamicResource m_btnCreateRandom}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,261,0,0" Click="btnCreateRandom_Click"/>
 
 
 

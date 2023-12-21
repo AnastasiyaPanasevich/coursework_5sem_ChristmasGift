@@ -13,8 +13,8 @@
 
         <Label x:Name="lblServerRespond" Content="respond" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <Button  x:Name="btnExit"   Content="Exit"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,283,0,0" Click="btnExit_Click"/>
-        <Button  x:Name="btnRetry"   Content="Retry"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,283,0,0" Click="btnRetry_Click"/>
+        <Button  x:Name="btnExit"   Content="{DynamicResource m_btnExit}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,283,0,0" Click="btnExit_Click"/>
+        <Button  x:Name="btnRetry"   Content="{DynamicResource m_btnRetry}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,283,0,0" Click="btnRetry_Click"/>
 
 
     </Grid>

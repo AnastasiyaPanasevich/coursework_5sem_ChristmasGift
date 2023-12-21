@@ -13,18 +13,11 @@
 
         </Grid.Background>
 
-        <Label x:Name="lblEnterEmail" Content="Enter your e-mail"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="74,217,613,189" Width="NaN" />
+        <Label x:Name="lblEnterEmail" Content="{DynamicResource m_lblEnterEmail}"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="74,217,613,189" Width="NaN" />
 
         <TextBox x:Name="EmailTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="74,250,0,0"/>
 
-        <Button  x:Name="btnDone"   Content="Done"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,296,0,0" Click="btnDone_Click"/>
-
-        
-        
-        <!--<Label x:Name="lblChooseLang"  Content="Choose the language:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="569,217,84,189" Width="NaN" />
-
-        <Button  x:Name="btnRUS"   Content="РУС"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="570,250,0,0" Click="btnRUS_Click"/>
-        <Button  x:Name="btnENG"   Content="ENG"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,250,0,0" Click="btnENG_Click"/>-->
+        <Button  x:Name="btnDone"   Content="{DynamicResource m_btnDone}"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207,296,0,0" Click="btnDone_Click"/>
 
     </Grid>
 </Window>
