@@ -1,4 +1,5 @@
-﻿using GiftLib;
+﻿using ChristmasGiftClient.Controller;
+using GiftLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,6 +15,11 @@ namespace ChristmasGiftClient.Model
     {
         private static string serverIP = "127.0.0.1";
         private static int serverPort = 8888;
+
+        /// ////////////////////////////////////////////////////////////////////////////////////////
+        private static string listIntFilePath = "ListIntDataClient.xml";
+        private static string giftFilePath = "GiftDataClient.xml";
+
 
         public static async Task<Gift> RunClientAsync(List<int> selectedIndexes)
         {
@@ -38,11 +44,15 @@ namespace ChristmasGiftClient.Model
                     // Response received within 5 seconds
                     byte[] responseData = await readTask;
 
-                    // Deserialize the response into a Gift object
-                    Gift receivedGift = Deserialize<Gift>(responseData);
+                    // Deserialize the response into a string using UTF-8 encoding
+                    string response = Encoding.UTF8.GetString(responseData);
 
-                    Console.WriteLine($"Received response from the server: {receivedGift}");
-                    return receivedGift;
+                    ServerRespondWindow window = new ServerRespondWindow();
+                    window.UpdateLabelText(response);
+                    window.Show();
+
+                    Console.WriteLine($"Received response from the server: {response}");
+                    return null;
                 }
                 else
                 {
@@ -69,6 +79,49 @@ namespace ChristmasGiftClient.Model
             return responseData.Take(bytesRead).ToArray();
         }
 
+
+        //    Helper method to serialize a List<int> to byte array using XML serialization
+        //    private static byte[] Serialize(List<int> obj)
+        //{
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        XmlSerializer serializer = new XmlSerializer(typeof(List<int>));
+        //        serializer.Serialize(ms, obj);
+
+        //        Write to file
+        //            File.WriteAllBytes(listIntFilePath, ms.ToArray());
+
+        //        Open the file
+        //            System.Diagnostics.Process.Start(listIntFilePath);
+
+        //        return ms.ToArray();
+        //    }
+        //}
+
+        //Helper method to deserialize a byte array to a Gift using XML deserialization
+        //    private static Gift DeserializeGift(byte[] data)
+        //{
+        //    using (MemoryStream ms = new MemoryStream(data))
+        //    {
+        //        XmlSerializer serializer = new XmlSerializer(typeof(Gift));
+        //        Gift result = (Gift)serializer.Deserialize(ms);
+
+        //        Write to file
+        //            File.WriteAllText(giftFilePath, result.ToString());
+
+        //        Open the file
+        //            System.Diagnostics.Process.Start(giftFilePath);
+
+        //        return result;
+        //    }
+        //}
+
+
+
+
+
+
+
         // Helper method to serialize an object to byte array using XML serialization
         private static byte[] Serialize<T>(T obj)
         {
@@ -80,14 +133,14 @@ namespace ChristmasGiftClient.Model
             }
         }
 
-        // Helper method to deserialize a byte array to an object using XML deserialization
-        private static T Deserialize<T>(byte[] data)
+    //  Helper method to deserialize a byte array to an object using XML deserialization
+    private static T Deserialize<T>(byte[] data)
+    {
+        using (MemoryStream ms = new MemoryStream(data))
         {
-            using (MemoryStream ms = new MemoryStream(data))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
-                return (T)serializer.Deserialize(ms);
-            }
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            return (T)serializer.Deserialize(ms);
         }
     }
+}
 }

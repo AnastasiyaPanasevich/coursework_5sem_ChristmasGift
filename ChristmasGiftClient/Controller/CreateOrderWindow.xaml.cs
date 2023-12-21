@@ -49,8 +49,8 @@ namespace ChristmasGiftClient.Controller
             await Client.RunClientAsync(selectedIndexes);
 
 
-            ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
-            serverRespondWindow.Show();
+            //ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
+            //serverRespondWindow.Show();
 
             this.Close();
         }
