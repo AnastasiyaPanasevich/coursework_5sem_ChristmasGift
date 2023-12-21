@@ -44,7 +44,9 @@ namespace ChristmasGiftClient
         private static void StartClient()
         {
             string message = "example";
+
             //ristmasGiftClient.Model.Client.RunClientAsync(message).Wait(); // Ждем завершения выполнения клиента
+
         }
 
         

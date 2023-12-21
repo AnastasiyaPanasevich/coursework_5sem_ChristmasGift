@@ -14,7 +14,7 @@ namespace Dictionary_Server
     public static class DataBaseReader
     {
 
-        private static string _dataBasePath = @"Data Source=GiftsDB.db";
+        private static string _dataBasePath = @"Data Source=GiftsDB-en.db";
 
         public static List<string[]> ReadEverything()
         {

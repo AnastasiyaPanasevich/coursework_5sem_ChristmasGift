@@ -10,9 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
-
-        <Label x:Name="lblBudget" Content="Enter the budget:" Foreground="White" FontWeight="Bold" Margin="9,360,682,43" Height="NaN" Width="NaN"/>
-        <TextBox x:Name="BudgetTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="38,396,0,0" Height="23"/>
+        <TextBox x:Name="txtBudget" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="10,182,0,0" Height="19" IsReadOnly="True" Text="0,0" TextAlignment="Right"/>
 
 
 
@@ -25,15 +23,15 @@
 
         <Button  x:Name="btnSubmitCustomOrder"   Content="Submit"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,381,0,0" Click="btnSubmitCustomOrder_Click" Width="76"/>
         <Label Content="Candles" HorizontalAlignment="Left" Margin="92,157,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxCandles" Margin="92,182,576,78" SelectionMode="Multiple">
-            
+        <ListBox x:Name="lbxCandles" Margin="92,182,576,78" SelectionMode="Multiple" SelectionChanged="ListBox_SelectionChanged">
+
         </ListBox>
         <Label Content="Clothes" HorizontalAlignment="Left" Margin="246,157,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxClothes" SelectionMode="Multiple" Margin="246,182,422,78"/>
+        <ListBox x:Name="lbxClothes" SelectionMode="Multiple" Margin="246,182,422,78" SelectionChanged="ListBox_SelectionChanged"/>
         <Label Content="Cookies" HorizontalAlignment="Left" Margin="400,157,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxCookies" SelectionMode="Multiple" Margin="400,182,268,78"/>
+        <ListBox x:Name="lbxCookies" SelectionMode="Multiple" Margin="400,182,268,78" SelectionChanged="ListBox_SelectionChanged"/>
         <Label Content="Ornaments" HorizontalAlignment="Left" Margin="552,157,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxOrnaments" SelectionMode="Multiple" Margin="552,182,116,78"/>
+        <ListBox x:Name="lbxOrnaments" SelectionMode="Multiple" Margin="552,182,116,78" SelectionChanged="ListBox_SelectionChanged"/>
 
 
 

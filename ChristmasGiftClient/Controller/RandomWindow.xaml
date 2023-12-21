@@ -11,11 +11,8 @@
             <ImageBrush ImageSource="/Controller/images/background1.jpg"/>
         </Grid.Background>
 
-        <Label x:Name="lblAmount"  Content="Enter the amount:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="270,190,383,216" Width="NaN" />
-        <TextBox x:Name="AmountTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="435,195,0,0" Height="23"/>
-
-        <Label x:Name="lblBudget"  Content="Enter the budget:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="270,238,383,168" Width="NaN" />
-        <TextBox x:Name="BudgetTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="435,238,0,0" Height="23"/>
+        <Label x:Name="lblBudget"  Content="Enter the budget:"  Foreground="White" FontWeight="Bold" Height="NaN" Margin="272,217,381,189" Width="NaN" />
+        <TextBox x:Name="BudgetTextBox"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="437,217,0,0" Height="23"/>
 
 
         <Button  x:Name="btnSubmitRandomOrder"   Content="Submit"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,309,0,0" Click="btnSubmitRandomOrder_Click"/>
