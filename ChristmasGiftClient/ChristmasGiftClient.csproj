@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\GiftServer\bin\Debug\net7.0\NLog.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="background1.jpg" />
     <Resource Include="Controller\images\background1.jpg" />
     <Resource Include="starBtn.png" />

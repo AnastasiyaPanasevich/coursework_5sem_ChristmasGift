@@ -92,7 +92,7 @@ namespace ChristmasGiftClient.Controller
             }
 
             List<int> giftID = new List<int>();
-            foreach (int index in indexes)
+            foreach (int index in result)
             {
                 giftID.Add(randomItems[index].Id);
             }
@@ -100,11 +100,15 @@ namespace ChristmasGiftClient.Controller
             return giftID;
         }
 
-        private void btnSubmitRandomOrder_Click(object sender, RoutedEventArgs e)
+        private async void btnSubmitRandomOrder_Click(object sender, RoutedEventArgs e)
         {
             List<int> giftsId = CreateRandomOrder();
-            ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
-            serverRespondWindow.Show();
+
+            // Call the client to send the selected indexes
+            await Client.RunClientAsync(giftsId);
+
+            //ServerRespondWindow serverRespondWindow = new ServerRespondWindow();
+            //serverRespondWindow.Show();
 
             this.Close();
         }
